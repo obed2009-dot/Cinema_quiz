@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11111b"><title>CineQuiz — Movie night, made a game</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">▶</span> cine<span>quiz</span></a><span class="topnote">MOVIES · SERIES · FRIENDS</span></header>
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy"><p class="eyebrow">YOUR NEXT MOVIE NIGHT</p><h1>How well do<br>you <em>really</em> know<br>the screen?</h1><p class="sub">Create a quiz, invite your crew, and settle the debate one question at a time.</p>
+  <div class="hero-actions"><button class="btn primary" id="go-create">＋ Create a quiz</button><button class="btn secondary" id="go-join">Join a room ↗</button></div>
+  <div class="mini-stats"><div><strong>01</strong><span>Make it yours</span></div><div><strong>02</strong><span>Bring your people</span></div><div><strong>03</strong><span>Claim the crown</span></div></div></div>
+  <div class="poster-stack"><div class="poster poster-a"><span>SCI-FI</span><b>BEYOND<br>THE STARS</b><small>THE UNIVERSE IS CALLING</small></div><div class="poster poster-b"><span>THRILLER</span><b>THE LAST<br>CLUE</b><small>EVERY DETAIL MATTERS</small></div><div class="poster poster-c"><span>COMEDY</span><b>ONE MORE<br>TAKE</b><small>ROLL THE LAUGHTER</small></div><div class="floating-chip">✦ <b>Game night</b><br><small>starts here</small></div></div>
+</section>
+<section class="panel" id="create-panel" hidden><div class="panel-head"><div><p class="eyebrow">BUILD YOUR CHALLENGE</p><h2>Create a quiz</h2></div><button class="icon-btn" data-close>✕</button></div>
+<form id="create-form"><label>Quiz title<input id="quiz-title" maxlength="80" placeholder="e.g. The Ultimate Sitcom Quiz" required></label><div id="question-list"></div><div class="form-actions"><button type="button" class="btn secondary" id="add-question">＋ Add question</button><button class="btn primary" type="submit">Save quiz</button></div></form><p class="hint">Images are optional. Use images you have permission to share.</p></section>
+<section class="panel" id="join-panel" hidden><div class="panel-head"><div><p class="eyebrow">YOUR CREW IS WAITING</p><h2>Join the room</h2></div><button class="icon-btn" data-close>✕</button></div><form id="join-form"><label>Your nickname<input id="join-name" maxlength="24" placeholder="Screen name" required></label><label>Room code<input id="join-code" maxlength="6" placeholder="ABC123" required></label><button class="btn primary" type="submit">Join game ↗</button></form></section>
+<section class="panel" id="library-panel"><div class="panel-head"><div><p class="eyebrow">PICK YOUR NEXT ROUND</p><h2>Your quiz library</h2></div><span class="count" id="quiz-count">Loading…</span></div><div id="quiz-library" class="quiz-grid"></div></section>
+<section class="panel" id="room-panel" hidden><div id="room-content"></div></section>
+<div id="toast" role="status" aria-live="polite"></div>
+</main><footer><span>cinequiz © 2026</span><span>Made for the love of stories.</span></footer>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
